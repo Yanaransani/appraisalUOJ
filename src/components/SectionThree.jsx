@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FieldArray, Field, ErrorMessage, useFormikContext } from "formik";
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
-import SecThreeTwo from "./secThreeTwo";
+import SecThreeTwo from "./SecThreeTwo";
 import SecThreeThreeA from "./SecThreeThreeA";
 import SecThreeThreeB from "./SecThreeThreeB";
 import SecThreeThreeC from "./SecThreeThreeC";
