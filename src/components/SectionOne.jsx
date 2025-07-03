@@ -35,7 +35,7 @@ export default function SectionOneFormik() {
                     <td className="px-4 py-2 border text-center">{index + 1}</td>
                     <td className="px-4 py-2 border">
                       <Field
-                        name={`objectives[${index}].Objective`}
+                        name={`objectives[${index}].objective`}
                         type="text"
                         className="w-full border px-2 py-1 rounded"
                       />

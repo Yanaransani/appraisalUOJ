@@ -25,7 +25,7 @@ export default function MultiForm() {
     personalEmail: "",
     onLongLeave: "",
     periodUnderReview: "",
-    objectives: [{ Objective: "" }],
+    objectives: [{ objective: "" }],
     probationaryLecturer: "",
     degree: "",
     awardingInstitution: "",
@@ -438,7 +438,7 @@ export default function MultiForm() {
       }
 
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbyc0OMOLlekhZxhW7I18BVs97mhyhRCy65y3woKFgdsyb6cKfCy-7WIume9nIjOEqaN/exec",
+        "https://script.google.com/macros/s/AKfycbzcYpcKaCbBU9k8zsUbj82FstgkJ293kffpO1SG2qmoCUKAr_u4HaFy62L19gHzuFA/exec",
         {
           method: "POST",
           body: formData,

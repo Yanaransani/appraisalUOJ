@@ -8,50 +8,51 @@ export default function SectionThreeTen() {
   const { values, setFieldValue } = useFormikContext();
 
   return (
-    <FieldArray name="awards">
-      {({ push, remove }) => (
-        <div>
-          <p className="mt-1 mb-2 font-semibold">
-            3.10 Evidence of teaching quality and impact
-          </p>
+    <>
+      {/* ====== Awards Section ====== */}
+      <FieldArray name="awards">
+        {({ push, remove }) => (
+          <div>
+            <p className="mt-1 mb-2 font-semibold">
+              3.10 Evidence of teaching quality and impact
+            </p>
 
-          <fieldset className="mb-4">
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              <p className="font-medium mr-4">
-                a. Awards and prizes (provide details)
-              </p>
+            <fieldset className="mb-4">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                <p className="font-medium mr-4">
+                  a. Awards and prizes (provide details)
+                </p>
 
-              {["Fill", "N/A"].map((title) => (
-                <div className="flex items-center gap-x-2" key={title}>
-                  <Field
-                    type="radio"
-                    name="award"
-                    value={title}
-                    id={title}
-                    checked={values.award === title}
-                    onChange={() => {
-                      setFieldValue("award", title);
-                      setIsAward(title);
-                    }}
-                  />
-                  <label
-                    htmlFor={title}
-                    className="text-sm font-medium text-gray-900"
-                  >
-                    {title}
-                  </label>
-                </div>
-              ))}
-            </div>
+                {["Fill", "N/A"].map((title) => (
+                  <div className="flex items-center gap-x-2" key={title}>
+                    <Field
+                      type="radio"
+                      name="award"
+                      value={title}
+                      id={title}
+                      checked={values.award === title}
+                      onChange={() => {
+                        setFieldValue("award", title);
+                        setIsAward(title);
+                      }}
+                    />
+                    <label
+                      htmlFor={title}
+                      className="text-sm font-medium text-gray-900"
+                    >
+                      {title}
+                    </label>
+                  </div>
+                ))}
+              </div>
+              <ErrorMessage
+                name="award"
+                component="div"
+                className="text-red-500 text-sm mt-1"
+              />
+            </fieldset>
 
-            <ErrorMessage
-              name="award"
-              component="div"
-              className="text-red-500 text-sm mt-1"
-            />
-          </fieldset>
-          {isAward === "Fill" && (
-            <>
+            {isAward === "Fill" && (
               <div className="overflow-x-auto">
                 <table className="min-w-full bg-white border border-gray-300">
                   <thead>
@@ -99,7 +100,6 @@ export default function SectionThreeTen() {
                         <td className="px-2 py-2 border">
                           <Field
                             type="date"
-                            id="date"
                             name={`awards[${index}].year`}
                             className="w-full rounded-md"
                           />
@@ -133,64 +133,71 @@ export default function SectionThreeTen() {
                     type="file"
                     accept=".pdf,image/*"
                     className="flex-1 text-sm text-gray-700
-                                        file:mr-4 file:py-2 file:px-4
-                                        file:rounded-full file:border-0
-                                        file:text-sm file:font-semibold
-                                        file:bg-blue-50 file:text-blue-700
-                                        hover:file:bg-blue-100"
+                      file:mr-4 file:py-2 file:px-4
+                      file:rounded-full file:border-0
+                      file:text-sm file:font-semibold
+                      file:bg-blue-50 file:text-blue-700
+                      hover:file:bg-blue-100"
                     onChange={(e) => {
                       const file = e.currentTarget.files[0];
-                      setFieldValue("evidenceFileForAwards", file); // ⬅️ store the file in Formik
+                      setFieldValue("evidenceFileForAwards", file);
                     }}
                   />
                 </div>
               </div>
-            </>
-          )}
+            )}
+          </div>
+        )}
+      </FieldArray>
 
-          <fieldset className="mb-4">
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              <p className="font-medium mr-4">
-                b. Invitations to lecture / speak at other institutions
-              </p>
+      {/* ====== Invitations Section ====== */}
+      <FieldArray name="invitations">
+        {({ push, remove }) => (
+          <>
+            <fieldset className="mb-4">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                <p className="font-medium mr-4">
+                  b. Invitations to lecture / speak at other institutions
+                </p>
 
-              {["Fill", "N/A"].map((title) => (
-                <div className="flex items-center gap-x-2" key={title}>
-                  <Field
-                    type="radio"
-                    name="invitation"
-                    value={title}
-                    id={title}
-                    checked={values.invitation === title}
-                    onChange={() => {
-                      setFieldValue("invitation", title);
-                      setIsInvitations(title);
-                    }}
-                  />
-                  <label
-                    htmlFor={title}
-                    className="text-sm font-medium text-gray-900"
-                  >
-                    {title}
-                  </label>
-                </div>
-              ))}
-            </div>
+                {["Fill", "N/A"].map((title) => (
+                  <div className="flex items-center gap-x-2" key={title}>
+                    <Field
+                      type="radio"
+                      name="invitation"
+                      value={title}
+                      id={title}
+                      checked={values.invitation === title}
+                      onChange={() => {
+                        setFieldValue("invitation", title);
+                        setIsInvitations(title);
+                      }}
+                    />
+                    <label
+                      htmlFor={title}
+                      className="text-sm font-medium text-gray-900"
+                    >
+                      {title}
+                    </label>
+                  </div>
+                ))}
+              </div>
+              <ErrorMessage
+                name="invitation"
+                component="div"
+                className="text-red-500 text-sm mt-1"
+              />
+            </fieldset>
 
-            <ErrorMessage
-              name="invitation"
-              component="div"
-              className="text-red-500 text-sm mt-1"
-            />
-          </fieldset>
-          {isInvitations === "Fill" && (
-            <>
+            {isInvitations === "Fill" && (
               <div className="overflow-x-auto">
                 <table className="min-w-full bg-white border border-gray-300">
                   <thead>
                     <tr className="bg-gray-100 text-gray-700 text-left text-sm">
                       <th className="px-4 py-2 border">SrNo.</th>
-                      <th className="px-4 py-2 border">Name of the institution</th>
+                      <th className="px-4 py-2 border">
+                        Name of the institution
+                      </th>
                       <th className="px-4 py-2 border">Invitation</th>
                       <th className="px-4 py-2 border">Topic of the lecture</th>
                       <th className="px-4 py-2 border">Number of hours</th>
@@ -203,7 +210,7 @@ export default function SectionThreeTen() {
                               nameIns: "",
                               invitation: "",
                               topic: "",
-                              hours: ""
+                              hours: "",
                             })
                           }
                           className="text-green-600 hover:text-green-800"
@@ -275,22 +282,22 @@ export default function SectionThreeTen() {
                     type="file"
                     accept=".pdf,image/*"
                     className="flex-1 text-sm text-gray-700
-                                        file:mr-4 file:py-2 file:px-4
-                                        file:rounded-full file:border-0
-                                        file:text-sm file:font-semibold
-                                        file:bg-blue-50 file:text-blue-700
-                                        hover:file:bg-blue-100"
+                      file:mr-4 file:py-2 file:px-4
+                      file:rounded-full file:border-0
+                      file:text-sm file:font-semibold
+                      file:bg-blue-50 file:text-blue-700
+                      hover:file:bg-blue-100"
                     onChange={(e) => {
                       const file = e.currentTarget.files[0];
-                      setFieldValue("evidenceFileForInvitation", file); // ⬅️ store the file in Formik
+                      setFieldValue("evidenceFileForInvitation", file);
                     }}
                   />
                 </div>
               </div>
-            </>
-          )}
-        </div>
-      )}
-    </FieldArray>
+            )}
+          </>
+        )}
+      </FieldArray>
+    </>
   );
 }
