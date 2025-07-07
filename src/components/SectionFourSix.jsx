@@ -122,7 +122,7 @@ export default function SectionFourSix() {
                   </tbody>
                 </table>
 
-                <div className="mt-4 flex items-center gap-4">
+                {/* <div className="mt-4 flex items-center gap-4">
                   <p className="font-medium text-gray-700 whitespace-nowrap">
                     Add Evidence (PDF or Image):
                   </p>
@@ -140,7 +140,7 @@ export default function SectionFourSix() {
                       setFieldValue("evidenceFileForMeetings", file);
                     }}
                   />
-                </div>
+                </div> */}
               </div>
             </>
           )}

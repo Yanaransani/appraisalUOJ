@@ -11,395 +11,399 @@ import ReviewInfo from "./ReviewInfo";
 import PartC from "./PartC";
 
 export default function MultiForm() {
-  const initialValues = {
-    honorific: "",
-    firstName: "",
-    lastName: "",
-    middleName: "",
-    gender: "",
-    employeeNumber: "",
-    dob: "",
-    department: "",
-    designation: "",
-    universityEmail: "",
-    personalEmail: "",
-    onLongLeave: "",
-    periodUnderReview: "",
-    objectives: [{ objective: "" }],
-    probationaryLecturer: "",
-    degree: "",
-    awardingInstitution: "",
-    yearCompletion: "",
-    inductionProgramme: "",
-    details: "",
-    teachingActivity: "",
-    teachingActivities: [
-      {
-        subject: "",
-        students: "",
-        year: "",
-        activity: "",
-        hours: "",
-      },
-    ],
-    evidenceFileForteachingAct: [],
-    examinationsDetail: "",
-    examinationsDetails: [
-      {
-        degreeProgramme: "",
-        students: "",
-        nameOfExam: "",
-        accadamicYear: "",
-        preparationExam: "",
-        role: "",
-      },
-    ],
-    evidenceFileForExamDetails: null,
-    undergraduateResearchDetail: "",
-    undergraduateResearchDetails: [
-      {
-        dProgramme: "",
-        supervision: "",
-        accYear: "",
-        regNumber: "",
-      },
-    ],
-    evidenceFileForUGResearchDetails: null,
-    postgraduateResearchDetail: "",
-    postgraduateResearchDetails: [
-      {
-        degreeProgramme: "",
-        supervision: "",
-        regNo: "",
-      },
-    ],
-    evidenceFileForPostGResearch: null,
-    inserviceTrainningDetail: "",
-    inserviceTrainningDetails: [
-      {
-        degreeProgramme: "",
-        supervision: "",
-        regNo: "",
-      },
-    ],
-    evidenceFileForInservice: null,
-    peerReview: "",
-    stuFeedback: "",
-    dateObtained: "",
-    dateObtainedStu: "",
-    evidenceFileForPeerReview: null,
-    evidenceFileForStuFB: null,
-    newCourse: "",
-    newCourses: [
-      {
-        courses: "",
-        date: "",
+  const draft = localStorage.getItem("appraisalFormDraft");
+
+  const initialValues = draft
+    ? JSON.parse(draft)
+    : {
+        honorific: "",
+        firstName: "",
+        lastName: "",
+        middleName: "",
+        gender: "",
+        employeeNumber: "",
+        dob: "",
+        department: "",
+        designation: "",
+        universityEmail: "",
+        personalEmail: "",
+        onLongLeave: "",
+        periodUnderReview: "",
+        objectives: [{ objective: "" }],
+        probationaryLecturer: "",
+        degree: "",
+        awardingInstitution: "",
+        yearCompletion: "",
+        inductionProgramme: "",
         details: "",
-      },
-    ],
-    evidenceFileForIntroCourse: null,
-    curriculum: "",
-    curriculums: [
-      {
-        courseProgram: "",
-        date: "",
-        details: "",
-      },
-    ],
-    evidenceFileForCurriculum: null,
-    laboratory: "",
-    laboratories: [
-      {
-        material: "",
-        details: "",
-      },
-    ],
-    evidenceFileForLab: null,
-    innovative: "",
-    innovatives: [
-      {
-        accYear: "",
-        approaches: "",
-        details: "",
-      },
-    ],
-    evidenceFileForInnovative: null,
-    curReview: "",
-    curReviews: [
-      {
-        review: "",
-        details: "",
-      },
-    ],
-    evidenceFileForReview: null,
-    award: "",
-    awards: [
-      {
-        honours: "",
-        year: "",
-        details: "",
-      },
-    ],
-    evidenceFileForAwards: null,
-    invitation: " ",
-    invitations: [
-      {
-        nameIns: "",
-        invitation: "",
-        topic: "",
-        hours: "",
-      },
-    ],
-    evidenceFileForInvitation: null,
-    project: "",
-    projects: [
-      {
-        title: "",
-        collaboration: "",
-        role: "",
-        funding: "",
-        amount: "",
-      },
-    ],
-    evidenceFileForProjects: null,
-    presentation: "",
-    presentations: [
-      {
-        title: "",
-        preTitle: "",
-        medium: "",
-        date: "",
-      },
-    ],
-    evidenceFileForPresentations: null,
-    publication: "",
-    publications: [
-      {
-        journal: "",
-        title: "",
-        doi: "",
-        date: "",
+        teachingActivity: "",
+        teachingActivities: [
+          {
+            subject: "",
+            students: "",
+            year: "",
+            activity: "",
+            hours: "",
+          },
+        ],
+        // evidenceFileForteachingAct: [],
+        examinationsDetail: "",
+        examinationsDetails: [
+          {
+            degreeProgramme: "",
+            students: "",
+            nameOfExam: "",
+            accadamicYear: "",
+            preparationExam: "",
+            role: "",
+          },
+        ],
+        // evidenceFileForExamDetails: null,
+        undergraduateResearchDetail: "",
+        undergraduateResearchDetails: [
+          {
+            dProgramme: "",
+            supervision: "",
+            accYear: "",
+            regNumber: "",
+          },
+        ],
+        // evidenceFileForUGResearchDetails: null,
+        postgraduateResearchDetail: "",
+        postgraduateResearchDetails: [
+          {
+            degreeProgramme: "",
+            supervision: "",
+            regNo: "",
+          },
+        ],
+        // evidenceFileForPostGResearch: null,
+        inserviceTrainningDetail: "",
+        inserviceTrainningDetails: [
+          {
+            degreeProgramme: "",
+            supervision: "",
+            regNo: "",
+          },
+        ],
+        // evidenceFileForInservice: null,
+        peerReview: "",
+        stuFeedback: "",
+        dateObtained: "",
+        dateObtainedStu: "",
+        // evidenceFileForPeerReview: null,
+        // evidenceFileForStuFB: null,
+        newCourse: "",
+        newCourses: [
+          {
+            courses: "",
+            date: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForIntroCourse: null,
+        curriculum: "",
+        curriculums: [
+          {
+            courseProgram: "",
+            date: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForCurriculum: null,
+        laboratory: "",
+        laboratories: [
+          {
+            material: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForLab: null,
+        innovative: "",
+        innovatives: [
+          {
+            accYear: "",
+            approaches: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForInnovative: null,
+        curReview: "",
+        curReviews: [
+          {
+            review: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForReview: null,
+        award: "",
+        awards: [
+          {
+            honours: "",
+            year: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForAwards: null,
+        invitation: " ",
+        invitations: [
+          {
+            nameIns: "",
+            invitation: "",
+            topic: "",
+            hours: "",
+          },
+        ],
+        // evidenceFileForInvitation: null,
+        project: "",
+        projects: [
+          {
+            title: "",
+            collaboration: "",
+            role: "",
+            funding: "",
+            amount: "",
+          },
+        ],
+        // evidenceFileForProjects: null,
+        presentation: "",
+        presentations: [
+          {
+            title: "",
+            preTitle: "",
+            medium: "",
+            date: "",
+          },
+        ],
+        // evidenceFileForPresentations: null,
+        publication: "",
+        publications: [
+          {
+            journal: "",
+            title: "",
+            doi: "",
+            date: "",
+            citation: "",
+          },
+        ],
+        // evidenceFileForJurnal: null,
+        book: "",
+        books: [
+          {
+            type: "",
+            title: "",
+            date: "",
+            publisher: "",
+          },
+        ],
+        // evidenceFileForBooks: null,
         citation: "",
-      },
-    ],
-    evidenceFileForJurnal: null,
-    book: "",
-    books: [
-      {
-        type: "",
-        title: "",
-        date: "",
-        publisher: "",
-      },
-    ],
-    evidenceFileForBooks: null,
-    citation: "",
-    citations: [
-      {
-        name: "",
-        source: "",
-        publised: "",
-        link: "",
-      },
-    ],
-    evidenceFileForCitations: null,
-    meeting: "",
-    meetings: [
-      {
-        type: "",
-        title: "",
-        date: "",
-      },
-    ],
-    evidenceFileForMeetings: null,
-    prize: "",
-    prizes: [
-      {
-        honours: "",
-        year: "",
-        nameOfHonour: "",
-        nameOfResearch: "",
-        insitute: "",
-      },
-    ],
-    evidenceFileForPrizes: null,
-    dlResponsibility: "",
-    dlResponsibilities: [
-      {
-        type: "",
-        details: "",
-        duration: "",
-      },
-    ],
-    evidenceFileForDLProjects: null,
-    flResponsibility: "",
-    flResponsibilities: [
-      {
-        type: "",
-        details: "",
-        duration: "",
-      },
-    ],
-    evidenceFileForFLProjects: null,
-    ulResponsibility: "",
-    uLResponsibilities: [
-      {
-        role: "",
-        details: "",
-        duration: "",
-      },
-    ],
-    evidenceFileForULProjects: null,
-    nLResponsibilitie: "",
-    nLResponsibilities: [
-      {
-        role: "",
-        details: "",
-        duration: "",
-      },
-    ],
-    evidenceFileForNLProjects: null,
-    otherContribution: "",
-    otherContributions: [
-      {
-        role: "",
-        details: "",
-        duration: "",
-      },
-    ],
-    evidenceFileOtherContributions: null,
-    professionalDevelopmentActivity: "",
-    professionalDevelopmentActivities: [
-      {
-        activity: "",
-        date: "",
-        topic: "",
-      },
-    ],
-    evidenceFileForPDActivity: null,
-    attendingProDevActivity: "",
-    attendingProDevActivities: [
-      {
-        activity: "",
-        date: "",
-        topic: "",
-      },
-    ],
-    evidenceFileForAttendingPDActivity: null,
-    educationalScholActivity: "",
-    educationalScholActivities: [
-      {
-        activity: "",
-        date: "",
-        topic: "",
-      },
-    ],
-    evidenceFileForEScholActivities: null,
-    welfareActivity: "",
-    welfareActivities: [
-      {
-        activity: "",
-        date: "",
-        topic: "",
-      },
-    ],
-    evidenceFileForWelfareActivities: null,
-    healthcareService: "",
-    healthcareServices: [
-      {
-        service: "",
-        details: "",
-      },
-    ],
-    evidenceFileForHealthcare: [],
-    clinicalService: "",
-    clinicalServices: [
-      {
-        clinical: "",
-        details: "",
-      },
-    ],
-    evidenceFileForClinicalServices: [],
-    speTechnology: "",
-    speTechnologies: [
-      {
-        centre: "",
-        details: "",
-      },
-    ],
-    evidenceFileForSpeTechnologies: null,
-    referralPathway: "",
-    referralPathways: [
-      {
-        centre: "",
-        details: "",
-      },
-    ],
-    evidenceFileForReferralPathways: null,
-    serviceCollaborative: "",
-    serviceCollaboratives: [
-      {
+        citations: [
+          {
+            name: "",
+            source: "",
+            publised: "",
+            link: "",
+          },
+        ],
+        // evidenceFileForCitations: null,
+        meeting: "",
+        meetings: [
+          {
+            type: "",
+            title: "",
+            date: "",
+          },
+        ],
+        // evidenceFileForMeetings: null,
+        prize: "",
+        prizes: [
+          {
+            honours: "",
+            year: "",
+            nameOfHonour: "",
+            nameOfResearch: "",
+            insitute: "",
+          },
+        ],
+        // evidenceFileForPrizes: null,
+        dlResponsibility: "",
+        dlResponsibilities: [
+          {
+            type: "",
+            details: "",
+            duration: "",
+          },
+        ],
+        // evidenceFileForDLProjects: null,
+        flResponsibility: "",
+        flResponsibilities: [
+          {
+            type: "",
+            details: "",
+            duration: "",
+          },
+        ],
+        // evidenceFileForFLProjects: null,
+        ulResponsibility: "",
+        uLResponsibilities: [
+          {
+            role: "",
+            details: "",
+            duration: "",
+          },
+        ],
+        // evidenceFileForULProjects: null,
+        nLResponsibilitie: "",
+        nLResponsibilities: [
+          {
+            role: "",
+            details: "",
+            duration: "",
+          },
+        ],
+        // evidenceFileForNLProjects: null,
+        otherContribution: "",
+        otherContributions: [
+          {
+            role: "",
+            details: "",
+            duration: "",
+          },
+        ],
+        // evidenceFileOtherContributions: null,
+        professionalDevelopmentActivity: "",
+        professionalDevelopmentActivities: [
+          {
+            activity: "",
+            date: "",
+            topic: "",
+          },
+        ],
+        // evidenceFileForPDActivity: null,
+        attendingProDevActivity: "",
+        attendingProDevActivities: [
+          {
+            activity: "",
+            date: "",
+            topic: "",
+          },
+        ],
+        // evidenceFileForAttendingPDActivity: null,
+        educationalScholActivity: "",
+        educationalScholActivities: [
+          {
+            activity: "",
+            date: "",
+            topic: "",
+          },
+        ],
+        // evidenceFileForEScholActivities: null,
+        welfareActivity: "",
+        welfareActivities: [
+          {
+            activity: "",
+            date: "",
+            topic: "",
+          },
+        ],
+        // evidenceFileForWelfareActivities: null,
+        healthcareService: "",
+        healthcareServices: [
+          {
+            service: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForHealthcare: [],
         clinicalService: "",
-        details: "",
-      },
-    ],
-    evidenceFileForServiceCollaboratives: null,
-    researchCapacity: "",
-    researchCapacities: [
-      {
-        title: "",
-        details: "",
-      },
-    ],
-    evidenceFileForResearchCapacities: null,
-    iPFill: "",
-    iP: [
-      {
-        item: "",
-        details: "",
-      },
-    ],
-    evidenceFileForIP: null,
-    uBLActivity: "",
-    uBLActivities: [
-      {
-        activity: "",
-        details: "",
-      },
-    ],
-    evidenceFileForUBLActivities: null,
-    commercialisation: "",
-    commercialisations: [
-      {
-        name: "",
-        details: "",
-      },
-    ],
-    evidenceFileForCommercialisations: null,
-    training: "",
-    trainings: [
-      {
-        name: "",
-        details: "",
-      },
-    ],
-    evidenceFileFortrainings: null,
-    multifunctionalResearch: "",
-    multifunctionalResearches: [
-      {
-        name: "",
-        details: "",
-      },
-    ],
-    evidenceFileFormultifunctionalResearches: null,
-    reflection: "",
-    categories: [
-      {
-        categoryName: "",
-        items: [{ name: "", value: "" }],
-      },
-    ],
-  };
+        clinicalServices: [
+          {
+            clinical: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForClinicalServices: [],
+        speTechnology: "",
+        speTechnologies: [
+          {
+            centre: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForSpeTechnologies: null,
+        referralPathway: "",
+        referralPathways: [
+          {
+            centre: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForReferralPathways: null,
+        serviceCollaborative: "",
+        serviceCollaboratives: [
+          {
+            clinicalService: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForServiceCollaboratives: null,
+        researchCapacity: "",
+        researchCapacities: [
+          {
+            title: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForResearchCapacities: null,
+        iPFill: "",
+        iP: [
+          {
+            item: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForIP: null,
+        uBLActivity: "",
+        uBLActivities: [
+          {
+            activity: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForUBLActivities: null,
+        commercialisation: "",
+        commercialisations: [
+          {
+            name: "",
+            details: "",
+          },
+        ],
+        // evidenceFileForCommercialisations: null,
+        training: "",
+        trainings: [
+          {
+            name: "",
+            details: "",
+          },
+        ],
+        // evidenceFileFortrainings: null,
+        multifunctionalResearch: "",
+        multifunctionalResearches: [
+          {
+            name: "",
+            details: "",
+          },
+        ],
+        // evidenceFileFormultifunctionalResearches: null,
+        reflection: "",
+        categories: [
+          {
+            categoryName: "",
+            items: [{ name: "", value: "" }],
+          },
+        ],
+      };
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -409,36 +413,68 @@ export default function MultiForm() {
       setLoading(true);
       const formData = new FormData();
 
-      // Extract all non-file fields into JSON
-      const dataWithoutFiles = Object.fromEntries(
-        Object.entries(formValues).filter(
-          ([key]) => !key.startsWith("evidenceFile")
-        )
-      );
-
-      console.log("Form values without files:", dataWithoutFiles); //  Add here
-
+      // Separate non-file data: Iterate and explicitly add non-file fields
+      const dataWithoutFiles = {};
+      for (const key in formValues) {
+        if (formValues.hasOwnProperty(key)) {
+          // Exclude any keys that start with "evidenceFileFor" from the JSON data
+          if (!key.startsWith("evidenceFileFor")) {
+            dataWithoutFiles[key] = formValues[key];
+          }
+        }
+      }
+      console.log("Form values without files:", dataWithoutFiles);
       formData.append("data", JSON.stringify(dataWithoutFiles));
 
-      // Append file manually
-      if (
-        window.teachingEvidenceInput &&
-        window.teachingEvidenceInput.files.length > 0
-      ) {
-        console.log("Uploaded files:", window.teachingEvidenceInput.files); //  Log files
+      // Iterate through all formValues to find and append file fields
+      for (const key in formValues) {
+        if (
+          formValues.hasOwnProperty(key) &&
+          key.startsWith("evidenceFileFor")
+        ) {
+          const fileData = formValues[key]; // This could be a File, FileList, or an array of Files
 
-        Array.from(window.teachingEvidenceInput.files).forEach(
-          (file, index) => {
-            // formData.append(`evidenceFileForteachingAct_${index}`, file);
-            formData.append("evidenceFileForteachingAct", file);
+          if (fileData) {
+            // Check if the field has a value (not null/undefined)
+            if (fileData instanceof File) {
+              // Case 1: The form field holds a single File object (e.g., evidenceFileForExamDetails)
+              console.log(`Appending single file for ${key}: ${fileData.name}`);
+              formData.append(key, fileData); // Append with the original key name
+            } else if (
+              Array.isArray(fileData) ||
+              (fileData && typeof fileData.length === "number")
+            ) {
+              // Case 2: The form field holds an array of Files or a FileList (e.g., evidenceFileForteachingAct)
+              // Ensure it's an array for iteration (FileList behaves like an array)
+              const files = Array.from(fileData);
+
+              if (files.length > 0) {
+                console.log(`Appending ${files.length} files for ${key}:`);
+                files.forEach((file, index) => {
+                  // Append each file with an indexed key, e.g., "evidenceFileForteachingAct_0"
+                  // This keeps your existing structure for multi-file inputs consistent
+                  formData.append(`${key}_${index}`, file);
+                  console.log(`  - ${file.name} as ${key}_${index}`);
+                });
+              } else {
+                console.log(`No files selected for ${key}.`);
+              }
+            } else {
+              console.log(
+                `Value for ${key} is not a file or file list (ignored):`,
+                fileData
+              );
+            }
+          } else {
+            console.log(
+              `No file data for ${key} (value was null/undefined, ignored).`
+            );
           }
-        );
-      } else {
-        console.log("No teaching evidence files selected.");
+        }
       }
 
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzcYpcKaCbBU9k8zsUbj82FstgkJ293kffpO1SG2qmoCUKAr_u4HaFy62L19gHzuFA/exec",
+        "https://script.google.com/macros/s/AKfycbxgasY5qMdql-LjrGJWQgnFly-bKMpPRZLXaaXtqx8qCHEWc0MPL93PC1mcQ0hprtgRag/exec",
         {
           method: "POST",
           body: formData,
@@ -446,7 +482,7 @@ export default function MultiForm() {
       );
 
       const result = await response.text();
-      // alert(result);
+      // alert(result); 
       setSubmitted(true);
     } catch (error) {
       console.error("Submission error:", error);
@@ -455,6 +491,68 @@ export default function MultiForm() {
       setLoading(false);
     }
   };
+
+  const handleSave = (values) => {
+    try {
+      localStorage.setItem("appraisalFormDraft", JSON.stringify(values));
+      alert("Draft saved successfully.");
+    } catch (error) {
+      console.error("Error saving draft:", error);
+      alert("Failed to save draft.");
+    }
+  };
+
+  // const handleSubmit = async (formValues) => {
+  //   try {
+  //     setLoading(true);
+  //     const formData = new FormData();
+
+  //     // Extract all non-file fields into JSON
+  //     const dataWithoutFiles = Object.fromEntries(
+  //       Object.entries(formValues).filter(
+  //         ([key]) => !key.startsWith("evidenceFile")
+  //       )
+  //     );
+
+  //     console.log("Form values without files:", dataWithoutFiles); //  Add here
+
+  //     formData.append("data", JSON.stringify(dataWithoutFiles));
+
+  //     // Append file manually
+  //     if (
+  //       window.teachingEvidenceInput &&
+  //       window.teachingEvidenceInput.files.length > 0
+  //     ) {
+  //       console.log("Uploaded files:", window.teachingEvidenceInput.files); //  Log files
+
+  //       Array.from(window.teachingEvidenceInput.files).forEach(
+  //         (file, index) => {
+  //           formData.append(`evidenceFileForteachingAct_${index}`, file);
+  //           // formData.append("evidenceFileForteachingAct", file);
+  //         }
+  //       );
+  //     } else {
+  //       console.log("No teaching evidence files selected.");
+  //     }
+
+  //     const response = await fetch(
+  //       "https://script.google.com/macros/s/AKfycbwpo0WRbvUV34NnRWh2IaBXvGAQ1B29m2i2heO-Nwy7jVyVEWVMSY9IwTXCaAsqMdp0ow/exec",
+  //       {
+  //         method: "POST",
+  //         body: formData,
+  //       }
+  //     );
+
+  //     const result = await response.text();
+  //     // alert(result);
+  //     setSubmitted(true);
+  //   } catch (error) {
+  //     console.error("Submission error:", error);
+  //     alert("Error submitting form.");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <div className="p-6">
@@ -509,9 +607,15 @@ export default function MultiForm() {
           <FaCirclePlus className="inline text-green-400" /> button; to remove a
           row, use the <FaCircleMinus className="inline text-red-400" /> button.
         </p>
-        <p>
+        <p className="mb-2">
           If the provided options are not suitable, please write your most
           appropriate response in the respective space.
+        </p>
+        <p className="mb-2">
+          Need to submit the evidence file via email(please enter your name and employee number included in the mail body). File should be name as the subject of the question.<br />
+          <b>Example:</b><br /> 3.1 Teaching activities conducted during the year <br />
+          Evidence File name - <b>3_1.pdf</b> <br />
+          <b>Mail ID : iqacmed@univ.jfn.ac.lk </b>
         </p>
       </div>
       {loading ? (
@@ -530,7 +634,6 @@ export default function MultiForm() {
           // onSubmit={(values) => {
           //   console.log("Submitted Values:", values);
           // }}
-          
         >
           {({ values }) => (
             <Form>
@@ -545,7 +648,15 @@ export default function MultiForm() {
               </h4>
               <PartC />
 
-              <div className="mt-6 flex justify-end">
+              <div className="mt-8 flex justify-end gap-4">
+                <button
+                  type="button"
+                  onClick={() => handleSave(values)}
+                  className="px-6 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
+                >
+                  Save as Draft
+                </button>
+
                 <button
                   type="submit"
                   className="px-6 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"

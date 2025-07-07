@@ -203,37 +203,10 @@ export default function SectionThree() {
                   </tbody>
                 </table>
 
-                <div className="mt-4 flex items-center gap-4">
+                {/* <div className="mt-4 flex items-center gap-4">
                   <p className="font-medium text-gray-700 whitespace-nowrap">
                     Add Evidence (PDF or Image):
                   </p>
-                  {/* <input
-                    type="file"
-                    accept=".pdf,image/*"
-                    name="evidenceFileForteachingAct"
-                    className="flex-1 text-sm text-gray-700
-                            file:mr-4 file:py-2 file:px-4
-                            file:rounded-full file:border-0
-                            file:text-sm file:font-semibold
-                            file:bg-blue-50 file:text-blue-700
-                            hover:file:bg-blue-100"
-                    onChange={(e) => {
-                      const file = e.currentTarget.files[0];
-                      setFieldValue("evidenceFileForteachingAct", file); // ⬅ store the file in Formik
-                    }}
-                  /> */}
-
-                  {/* <input
-                    type="file"
-                    accept=".pdf,image/*"
-                    name="evidenceFileForteachingAct"
-                    ref={(el) => (window.teachingEvidenceInput = el)}// make it accessible globally
-                    className="..."
-                    onChange={(e) => {
-                      const file = e.currentTarget.files[0];
-                      setFieldValue("evidenceFileForteachingAct", file);
-                    }}
-                  /> */}
                   <input
                     type="file"
                     accept=".pdf,image/*"
@@ -246,7 +219,7 @@ export default function SectionThree() {
                       setFieldValue("evidenceFileForteachingAct", files); // store array in Formik
                     }}
                   />
-                </div>
+                </div> */}
               </div>
             </>
           )}

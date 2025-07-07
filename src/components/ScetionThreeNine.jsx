@@ -110,7 +110,7 @@ export default function SectionThreeNine() {
                   </tbody>
                 </table>
 
-                <div className="mt-4 flex items-center gap-4">
+                {/* <div className="mt-4 flex items-center gap-4">
                   <p className="font-medium text-gray-700 whitespace-nowrap">
                     Add Evidence (PDF or Image):
                   </p>
@@ -125,10 +125,10 @@ export default function SectionThreeNine() {
                             hover:file:bg-blue-100"
                     onChange={(e) => {
                       const file = e.currentTarget.files[0];
-                      setFieldValue("evidenceFileForReview", file); // ⬅️ store the file in Formik
+                      setFieldValue("evidenceFileForReview", file); // store the file in Formik
                     }}
                   />
-                </div>
+                </div> */}
               </div>
             </>
           )}

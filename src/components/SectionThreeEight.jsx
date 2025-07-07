@@ -148,7 +148,7 @@ export default function SectionThreeEight() {
                   </tbody>
                 </table>
 
-                <div className="mt-4 flex items-center gap-4">
+                {/* <div className="mt-4 flex items-center gap-4">
                   <p className="font-medium text-gray-700 whitespace-nowrap">
                     Add Evidence (PDF or Image):
                   </p>
@@ -167,16 +167,7 @@ export default function SectionThreeEight() {
                       setFieldValue("evidenceFileForInnovative", file);
                     }}
                   />
-
-                  {/* <input
-                    type="file"
-                    name="attachment"
-                    accept=".pdf,image/*"
-                    onChange={(e) =>
-                      setFieldValue("attachment", e.currentTarget.files[0])
-                    }
-                  /> */}
-                </div>
+                </div> */}
               </div>
             </>
           )}

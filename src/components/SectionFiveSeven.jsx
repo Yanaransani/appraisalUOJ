@@ -123,7 +123,7 @@ export default function SectionFiveSeven() {
                     </tbody>
                   </table>
 
-                  <div className="mt-4 flex items-center gap-4">
+                  {/* <div className="mt-4 flex items-center gap-4">
                     <p className="font-medium text-gray-700 whitespace-nowrap">
                       Add Evidence (PDF or Image):
                     </p>
@@ -144,7 +144,7 @@ export default function SectionFiveSeven() {
                         );
                       }}
                     />
-                  </div>
+                  </div> */}
                 </div>
               </>
             )}

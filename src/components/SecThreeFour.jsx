@@ -70,8 +70,7 @@ export default function SecThreeFour() {
                 />
               </div>
 
-              {/* Add Evidence */}
-              <div className="flex items-center gap-2 flex-1">
+              {/* <div className="flex items-center gap-2 flex-1">
                 <p className="whitespace-nowrap text-sm font-medium text-gray-700">
                   Add Evidence (PDF or Image):
                 </p>
@@ -89,7 +88,7 @@ export default function SecThreeFour() {
                     setFieldValue("evidenceFileForPeerReview", file);
                   }}
                 />
-              </div>
+              </div> */}
             </div>
           )}
 
@@ -149,8 +148,7 @@ export default function SecThreeFour() {
                 />
               </div>
 
-              {/* Add Evidence */}
-              <div className="flex items-center gap-2 flex-1">
+              {/* <div className="flex items-center gap-2 flex-1">
                 <p className="whitespace-nowrap text-sm font-medium text-gray-700">
                   Add Evidence (PDF or Image):
                 </p>
@@ -168,7 +166,7 @@ export default function SecThreeFour() {
                     setFieldValue("evidenceFileForStuFB", file);
                   }}
                 />
-              </div>
+              </div> */}
             </div>
           )}
         </div>

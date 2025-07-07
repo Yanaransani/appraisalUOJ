@@ -125,7 +125,7 @@ export default function SectionThreeTen() {
                   </tbody>
                 </table>
 
-                <div className="mt-4 flex items-center gap-4">
+                {/* <div className="mt-4 flex items-center gap-4">
                   <p className="font-medium text-gray-700 whitespace-nowrap">
                     Add Evidence (PDF or Image):
                   </p>
@@ -143,7 +143,7 @@ export default function SectionThreeTen() {
                       setFieldValue("evidenceFileForAwards", file);
                     }}
                   />
-                </div>
+                </div> */}
               </div>
             )}
           </div>
@@ -274,7 +274,7 @@ export default function SectionThreeTen() {
                   </tbody>
                 </table>
 
-                <div className="mt-4 flex items-center gap-4">
+                {/* <div className="mt-4 flex items-center gap-4">
                   <p className="font-medium text-gray-700 whitespace-nowrap">
                     Add Evidence (PDF or Image):
                   </p>
@@ -292,7 +292,7 @@ export default function SectionThreeTen() {
                       setFieldValue("evidenceFileForInvitation", file);
                     }}
                   />
-                </div>
+                </div> */}
               </div>
             )}
           </>
