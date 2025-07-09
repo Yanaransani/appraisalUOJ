@@ -397,6 +397,7 @@ export default function MultiForm() {
         ],
         // evidenceFileFormultifunctionalResearches: null,
         reflection: "",
+        driveLink: "",
         categories: [
           {
             categoryName: "",
@@ -474,7 +475,7 @@ export default function MultiForm() {
       }
 
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxgasY5qMdql-LjrGJWQgnFly-bKMpPRZLXaaXtqx8qCHEWc0MPL93PC1mcQ0hprtgRag/exec",
+        "https://script.google.com/macros/s/AKfycbzC3DPvKPWKsxUQOHw7zFCCKp8ixJu1txSxnfoWFexUvY_qjt2rDZq2bw9As9mBkibD/exec",
         {
           method: "POST",
           body: formData,
@@ -482,7 +483,7 @@ export default function MultiForm() {
       );
 
       const result = await response.text();
-      // alert(result); 
+      // alert(result);
       setSubmitted(true);
     } catch (error) {
       console.error("Submission error:", error);
@@ -501,58 +502,6 @@ export default function MultiForm() {
       alert("Failed to save draft.");
     }
   };
-
-  // const handleSubmit = async (formValues) => {
-  //   try {
-  //     setLoading(true);
-  //     const formData = new FormData();
-
-  //     // Extract all non-file fields into JSON
-  //     const dataWithoutFiles = Object.fromEntries(
-  //       Object.entries(formValues).filter(
-  //         ([key]) => !key.startsWith("evidenceFile")
-  //       )
-  //     );
-
-  //     console.log("Form values without files:", dataWithoutFiles); //  Add here
-
-  //     formData.append("data", JSON.stringify(dataWithoutFiles));
-
-  //     // Append file manually
-  //     if (
-  //       window.teachingEvidenceInput &&
-  //       window.teachingEvidenceInput.files.length > 0
-  //     ) {
-  //       console.log("Uploaded files:", window.teachingEvidenceInput.files); //  Log files
-
-  //       Array.from(window.teachingEvidenceInput.files).forEach(
-  //         (file, index) => {
-  //           formData.append(`evidenceFileForteachingAct_${index}`, file);
-  //           // formData.append("evidenceFileForteachingAct", file);
-  //         }
-  //       );
-  //     } else {
-  //       console.log("No teaching evidence files selected.");
-  //     }
-
-  //     const response = await fetch(
-  //       "https://script.google.com/macros/s/AKfycbwpo0WRbvUV34NnRWh2IaBXvGAQ1B29m2i2heO-Nwy7jVyVEWVMSY9IwTXCaAsqMdp0ow/exec",
-  //       {
-  //         method: "POST",
-  //         body: formData,
-  //       }
-  //     );
-
-  //     const result = await response.text();
-  //     // alert(result);
-  //     setSubmitted(true);
-  //   } catch (error) {
-  //     console.error("Submission error:", error);
-  //     alert("Error submitting form.");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   return (
     <div className="p-6">
@@ -612,10 +561,15 @@ export default function MultiForm() {
           appropriate response in the respective space.
         </p>
         <p className="mb-2">
-          Need to submit the evidence file via email(please enter your name and employee number included in the mail body). File should be name as the subject of the question.<br />
-          <b>Example:</b><br /> 3.1 Teaching activities conducted during the year <br />
-          Evidence File name - <b>3_1.pdf</b> <br />
-          <b>Mail ID : iqacmed@univ.jfn.ac.lk </b>
+          Please upload all <b>evidence files</b> to your Google Drive and
+          provide the shared drive link in the designated field at the end of
+          this form. <br />
+          Ensure that each file is appropriately named for easy identification.{" "}
+          <br />
+          <b>Example:</b>
+          <br />
+          3.1 Teaching activities conducted during the year <br />
+          Evidence file name: <b>3_1.pdf</b>
         </p>
       </div>
       {loading ? (
