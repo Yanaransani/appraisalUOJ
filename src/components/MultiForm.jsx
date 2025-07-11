@@ -561,11 +561,10 @@ export default function MultiForm() {
           appropriate response in the respective space.
         </p>
         <p className="mb-2">
-          Please upload all <b>evidence files</b> to your Google Drive and
-          provide the shared drive link in the designated field at the end of
-          this form. <br />
-          Ensure that each file is appropriately named for easy identification.{" "}
-          <br />
+          Please make a folder with your name in your Google Drive, upload all
+          the <b>evidence files</b> and provide the shared drive link in the
+          designated field at the end of this form. <br /> Ensure that each file
+          is appropriately named for easy identification. <br />
           <b>Example:</b>
           <br />
           3.1 Teaching activities conducted during the year <br />
