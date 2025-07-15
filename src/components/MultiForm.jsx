@@ -9,6 +9,7 @@ import logo from "./logo.png";
 import medLogo from "./medLogo.png";
 import ReviewInfo from "./ReviewInfo";
 import PartC from "./PartC";
+import instructionPDF from "./annex.pdf";
 
 export default function MultiForm() {
   const draft = localStorage.getItem("appraisalFormDraft");
@@ -569,6 +570,16 @@ export default function MultiForm() {
           <br />
           3.1 Teaching activities conducted during the year <br />
           Evidence file name: <b>3_1.pdf</b>
+        </p>
+        <p className="mb-2">
+          <a
+            href={instructionPDF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline hover:text-blue-800"
+          >
+            📄 Please find the Annexture here
+          </a>
         </p>
       </div>
       {loading ? (
