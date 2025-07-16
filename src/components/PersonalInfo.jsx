@@ -225,11 +225,11 @@ export default function MultiInfo() {
           <option value="Professor">Professor</option>
           <option value="HOD">Head of the Department</option>
           <option value="Dean">Dean</option>
-          <option value="Senior Letcurer Gr1">Senior Letcurer Gr1</option>
-          <option value="Senior Letcurer Gr2">Senior Letcurer Gr2</option>
-          <option value="Letcurer Gr2">Letcurer Gr2</option>
-          <option value="Letcurer Gr1">Letcurer Gr1</option>
-          <option value="Letcurer Probationar">Letcurer Probationary</option>
+          <option value="Senior lecturer Gr1">Senior Lecturer Gr1</option>
+          <option value="Senior lecturer Gr2">Senior Lecturer Gr2</option>
+          <option value="Lecturer Gr2">Lecturer Gr2</option>
+          <option value="Lecturer Gr1">Lecturer Gr1</option>
+          <option value="Lecturer Probationary">Lecturer Probationary</option>
         </Field>
         <ErrorMessage
           name="designation"
