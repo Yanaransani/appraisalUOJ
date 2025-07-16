@@ -227,9 +227,9 @@ export default function MultiInfo() {
           <option value="Dean">Dean</option>
           <option value="Senior lecturer Gr1">Senior Lecturer Gr1</option>
           <option value="Senior lecturer Gr2">Senior Lecturer Gr2</option>
-          <option value="Lecturer Gr2">Lecturer Gr2</option>
-          <option value="Lecturer Gr1">Lecturer Gr1</option>
-          <option value="Lecturer Probationary">Lecturer Probationary</option>
+          <option value="Lecturer (Confirmed)">Lecturer (Confirmed)</option>
+          {/* <option value="Lecturer Gr1">Lecturer Gr1</option> */}
+          <option value="Lecturer Probationary">Lecturer (Probationary)</option>
         </Field>
         <ErrorMessage
           name="designation"
